@@ -4,7 +4,13 @@
             <h1>Rincón del libro</h1>
             <div class="sesion">
                 <mat-icon>home</mat-icon>
-                <mat-icon>login</mat-icon>
+
+                @if (!loginService.isAuthenticated) {
+                <a routerLink="[/login]"><mat-icon>login</mat-icon></a>
+                }
+                @else {
+                <mat-icon>logout</mat-icon>
+                }
             </div>
         </div>
         <div class="menu">
@@ -14,13 +20,16 @@
         </div>
     </header>
     <main>
+        @if(loginService.userInfo !== null){
         <section class="saludo">
             <div class="sal">
-                <span>¡Bienvenido!</span>
-                <p>Descubre libros, historias y mundos que te inspirarán. Comparte tu pasión por la lectura y encuentra tu próxima aventura entre páginas. ¡Explora y disfruta!</p>
+                <span>¡Bienvenido! {{loginService.userInfo.nombre}}</span>
+                <p>Descubre libros, historias y mundos que te inspirarán. Comparte tu pasión por la lectura y encuentra
+                    tu próxima aventura entre páginas. ¡Explora y disfruta!</p>
             </div>
             <div class="sal image-container"><img src="/Saludo.svg" alt="Saludo"></div>
         </section>
+        }
         <section>
             <swiper-container autoplay speed="500" loop="true" effect="slide" fadeEffect>
                 <swiper-slide>
@@ -39,7 +48,7 @@
                     </div>
                 </swiper-slide>
             </swiper-container>
-        </section>        
+        </section>
         <span>Género</span>
         <div class="card-container">
             <div class="card" *ngFor="let item of items">

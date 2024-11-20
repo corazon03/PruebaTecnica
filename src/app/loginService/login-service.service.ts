@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface userData {
   email: string;
@@ -15,8 +16,10 @@ export class LoginServiceService {
   isAuthenticated = false;
   userInfo: userData | null = null;
 
-  constructor() {
+  constructor(private router: Router) {
     this.isAuthenticated = this.checkAuthenticated();
+
+    if (this.isAuthenticated) router.navigate(["/home"])
   }
 
   register(email: string, password: string, nombre: string): string {
@@ -38,6 +41,7 @@ export class LoginServiceService {
       if (user.password === password) {
         this.userInfo = user;
         this.isAuthenticated = true;
+        this.router.navigate(["/home"])
         return 'Login exitoso.';
       } else {
         return 'Contraseña incorrecta.';

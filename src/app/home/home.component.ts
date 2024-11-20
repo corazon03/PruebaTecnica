@@ -1,8 +1,9 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { register } from 'swiper/element/bundle';
 register();
 import { CommonModule } from '@angular/common';
+import { LoginServiceService } from '../loginService/login-service.service';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,8 @@ export class HomeComponent {
             { title: 'Thriller', description: 'El thriller es un género literario que se caracteriza por mantener al lector en un estado de suspenso, intriga y emoción constante. Estas historias suelen tener un ritmo rápido, giros inesperados y situaciones llenas de tensión que buscan atrapar la atención del lector desde el principio hasta el final.', image: '/Thriller.jpg' } ];
           
   selectedImage: string | null = null;
+
+  constructor(public loginService: LoginServiceService){}
   
   openModal(image: string): void { this.selectedImage = image; }
   
