@@ -14,20 +14,33 @@
         </div>
     </header>
     <main>
-        <div class="saludo">
-            <div>
-                <span>¡Bienvenido, !</span>
+        <section class="saludo">
+            <div class="sal">
+                <span>¡Bienvenido!</span>
                 <p>Descubre libros, historias y mundos que te inspirarán. Comparte tu pasión por la lectura y encuentra tu próxima aventura entre páginas. ¡Explora y disfruta!</p>
             </div>
-            <img src="/Saludo.svg" alt="Saludo">
-        </div>
-        <div>
+            <div class="sal image-container"><img src="/Saludo.svg" alt="Saludo"></div>
+        </section>
+        <section>
             <swiper-container autoplay speed="500" loop="true" effect="slide" fadeEffect>
-                <swiper-slide><div class="slider"><img src="/Libro2.jpg" alt="Imagen de libros"></div></swiper-slide>
-                <swiper-slide><div class="slider"><img src="/Libro1.jpg" alt="Imagen de libros"></div></swiper-slide>
-                <swiper-slide><div class="slider"><img src="/Libro3.jpg" alt="Imagen de libros"></div></swiper-slide>
-              </swiper-container>
-        </div>
+                <swiper-slide>
+                    <div class="slider">
+                        <img src="/Libro2.jpg" alt="Imagen de libros">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="slider">
+                        <img src="/Libro1.jpg" alt="Imagen de libros">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="slider">
+                        <img src="/Libro3.jpg" alt="Imagen de libros">
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+        </section>        
+        <span>Género</span>
         <div class="card-container">
             <div class="card" *ngFor="let item of items">
                 <img [src]="item.image" (click)="openModal(item.image)">
@@ -41,6 +54,7 @@
         </div>
         <div class="about">
             <span>Acerca de nosotros</span>
+            <p>Hola</p>
         </div>
         <div class="btn-listado">
             <span>Botón listado</span>

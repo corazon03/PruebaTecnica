@@ -8,6 +8,7 @@ header {
         padding-block: 0.5rem;
         padding-inline: 0.2rem;
     }
+    
 }
 
 h1 {
@@ -51,34 +52,34 @@ main {
   }
 
 .saludo {
-    padding-inline: 2rem;
     display: flex;
-    align-items: center;
-    margin-block: 1rem;
-    min-height: 80vh;
+    flex-wrap: wrap;
 }
 
-.saludo div span {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: red;
+.sal {
+    flex: 1;
+    min-width: 250px;
+    align-self: center;
 }
 
-.saludo div p {
-    margin-top: 1rem;
-    font-size: 1.1rem;
+.sal:first-child {
+    flex: 2;
+    padding: 25px;
+    margin-bottom: 0;
+    justify-self: center;
 }
 
-.saludo img {
-    width: 400px;
+.sal img {
+    width: 250px;
 }
 
-.saludo div {
-    display: block;
-    margin-top: 1rem;
-    padding-right: 3rem;
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
+/* Estilos básicos */
 .slider {
     display: flex;
     justify-content: center;
@@ -89,16 +90,105 @@ main {
 }
 
 .slider img {
-    height: 100%;
-    width: 40%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 20px;
 }
 
-footer {
-    /* position: fixed;
-    bottom: 0; */
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+    .slider {
+        height: 250px;
+    }
+
+    .slider img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider {
+        height: 250px;
+    }
+
+    .slider img {
+        max-width: 300px;
+    }
+
+    .sal img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        height: 250px;
+    }
+
+    .slider img {
+        max-width: 300px;
+    }
+
+    .sal img {
+        width: 200px;
+    }
+}
+
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  .card img {
     width: 100%;
-    height: 150px; /* Cambiar el valor según sea necesario */
+    height: auto;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }  
+
+footer {
+    height: 150px; 
     align-content: center;
     padding-inline: 1rem;
     background-color: aquamarine;
