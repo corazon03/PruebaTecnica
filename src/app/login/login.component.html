@@ -1,1 +1,56 @@
-<p>login works!</p>
+<div>
+    <mat-tab-group>
+        <mat-tab label="Iniciar sesion">
+            <div>
+                <h2>Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Email" required>
+                        <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                            asdasd
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password" placeholder="Password" required>
+                        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                            AOKSDOAKSD
+                        </mat-error>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit">Login</button>
+                </form>
+            </div>
+
+        </mat-tab>
+        <mat-tab label="Registrarse">
+            <!-- <div>
+                <h2>Registro</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="nombre" placeholder="Nombre" required>
+                        <mat-error
+                            *ngIf="registerForm.get('nombre').invalid && registerForm.get('nombre').touched">Nombre es
+                            requerido</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Email" required>
+                        <mat-error *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">Email
+                            es
+                            requerido</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password" placeholder="Password" required>
+                        <mat-error
+                            *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">Contraseña
+                            es requerida</mat-error>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit">Registrar</button>
+                </form>
+            </div> -->
+        </mat-tab>
+    </mat-tab-group>
+</div>
