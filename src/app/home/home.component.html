@@ -1,0 +1,62 @@
+<div>
+    <header>
+        <div class="logo">
+            <h1>Rincón del libro</h1>
+            <div class="sesion">
+                <mat-icon>home</mat-icon>
+                <mat-icon>login</mat-icon>
+            </div>
+        </div>
+        <div class="menu">
+            <span>Listado</span>
+            <span>Skills</span>
+            <span>Contacto</span>
+        </div>
+    </header>
+    <main>
+        <div class="saludo">
+            <div>
+                <span>¡Bienvenido, !</span>
+                <p>Descubre libros, historias y mundos que te inspirarán. Comparte tu pasión por la lectura y encuentra tu próxima aventura entre páginas. ¡Explora y disfruta!</p>
+            </div>
+            <img src="/Saludo.svg" alt="Saludo">
+        </div>
+        <div>
+            <swiper-container autoplay speed="500" loop="true" effect="slide" fadeEffect>
+                <swiper-slide><div class="slider"><img src="/Libro2.jpg" alt="Imagen de libros"></div></swiper-slide>
+                <swiper-slide><div class="slider"><img src="/Libro1.jpg" alt="Imagen de libros"></div></swiper-slide>
+                <swiper-slide><div class="slider"><img src="/Libro3.jpg" alt="Imagen de libros"></div></swiper-slide>
+              </swiper-container>
+        </div>
+        <div class="card-container">
+            <div class="card" *ngFor="let item of items">
+                <img [src]="item.image" (click)="openModal(item.image)">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
+        </div>
+        <div class="modal" *ngIf="selectedImage" (click)="closeModal()">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <img class="modal-content" [src]="selectedImage">
+        </div>
+        <div class="about">
+            <span>Acerca de nosotros</span>
+        </div>
+        <div class="btn-listado">
+            <span>Botón listado</span>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div>
+                <span>Dirección</span>
+            </div>
+            <div>
+                <span>Contacto</span>
+            </div>
+        </div>
+        <div>
+            <span>Derechos reservados</span>
+        </div>
+    </footer>
+</div>
