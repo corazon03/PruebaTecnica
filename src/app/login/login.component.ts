@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTabsModule} from '@angular/material/tabs';
+import { MatCard } from '@angular/material/card';
 import { MatInput } from '@angular/material/input';
 import { MatFormField, MatLabel, MatError } from '@angular/material/form-field';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -10,7 +11,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatTabsModule, MatFormField, MatLabel, MatError, ReactiveFormsModule, NgIf, MatInput ],
+  imports: [MatTabsModule, MatFormField, MatLabel, MatError, ReactiveFormsModule, NgIf, MatInput, MatCard ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
