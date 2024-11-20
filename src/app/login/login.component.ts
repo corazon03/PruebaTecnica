@@ -20,15 +20,15 @@ export class LoginComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required)
   })
-  registerForm: FormGroup;
+  registerForm = new FormGroup({
+    nombre: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required)
+  })
 
 
   constructor(private fb: FormBuilder, private loginService: LoginServiceService) {
-    this.registerForm = this.fb.group({
-      nombre: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
+    
   }
   onSubmit() {
     if (this.loginForm.valid) {
@@ -40,7 +40,7 @@ export class LoginComponent {
   onRegister() {
     if (this.registerForm.valid) {
       const { nombre, email, password } = this.registerForm.value;
-      const result = this.loginService.register(email, password, nombre);
+      const result = this.loginService.register(email as string, password as string, nombre as string);
       alert(result);
     }
   }
