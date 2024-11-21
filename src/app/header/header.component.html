@@ -1,0 +1,26 @@
+<header>
+    <div class="logo">
+        <h1>Rincón del libro</h1>
+        <div class="sesion">
+            <mat-icon matTooltip="Home">home</mat-icon>
+
+            @if (!loginService.isAuthenticated) {
+            <a style="text-decoration: none; color: black;" [routerLink]="['/login']"><mat-icon
+                    matTooltip="Iniciar sesión">login</mat-icon></a>
+            }
+            @else {
+            <button class="btn" (click)="this.loginService.logout()">
+                <mat-icon matTooltip="Cerrar sesión">logout</mat-icon>
+            </button>
+            }
+            <!-- @else {
+            <mat-icon matTooltip="Cerrar sesión">logout</mat-icon>
+            } -->
+        </div>
+    </div>
+    <div class="menu">
+        <span>Listado</span>
+        <span (click)="openDialog()">Skills</span>
+        <span>Contacto</span>
+    </div>
+</header>

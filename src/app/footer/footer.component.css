@@ -1,0 +1,54 @@
+footer {
+    height: 150px;
+    align-content: center;
+    padding-inline: 1rem;
+    padding-block: 1.5rem;
+    background-color: #01013e;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.info-title {
+    font-weight: 700;
+}
+
+.info .item {
+    flex: 1;
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-contact mat-icon {
+    padding-inline: 10px;
+    cursor: pointer;
+}
+
+.separator {
+    width: 1px;
+    height: 50px;
+    background-color: white;
+    margin: 0 5px;
+}
+
+.texto {
+    font-size: small;
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-size: small;
+}

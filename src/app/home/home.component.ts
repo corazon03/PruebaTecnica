@@ -1,25 +1,15 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { register } from 'swiper/element/bundle';
 register();
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'
-
 import { LoginServiceService } from '../loginService/login-service.service';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { SkillsComponent } from '../skills/skills.component';
-import {MatButtonModule} from '@angular/material/button';
-import {
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-} from '@angular/material/dialog';
+import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIconModule, CommonModule, RouterModule, MatTooltipModule, SkillsComponent, MatButtonModule],
+  imports: [CommonModule, FooterComponent, HeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -35,11 +25,5 @@ export class HomeComponent {
   
   closeModal(): void { this.selectedImage = null; }
 
-  readonly dialog = inject(MatDialog);
-
-  openDialog() {
-    const dialogRef = this.dialog.open(SkillsComponent, {restoreFocus: false});
-  }
-  
   constructor(public loginService: LoginServiceService){}
 }

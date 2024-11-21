@@ -1,0 +1,70 @@
+header {
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding-block: 0.5rem;
+        padding-inline: 0.2rem;
+    }
+    
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000080;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.sesion {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sesion mat-icon:hover {
+    cursor: pointer;
+    background-color: #000080;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+}
+
+.btn {
+    background-color: transparent;
+    color: black;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 0.5rem;
+    justify-items: center;
+}
+
+.menu span:hover {
+    background-color: #000080;
+    border-radius: 20px;
+    color: white;
+    padding-inline: 10px;
+    cursor: pointer;
+}

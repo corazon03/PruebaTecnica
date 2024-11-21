@@ -1,30 +1,5 @@
 <div>
-    <header>
-        <div class="logo">
-            <h1>Rincón del libro</h1>
-            <div class="sesion">
-                <mat-icon matTooltip="Home">home</mat-icon>
-
-                @if (!loginService.isAuthenticated) {
-                <a style="text-decoration: none; color: black;" [routerLink]="['/login']"><mat-icon
-                        matTooltip="Iniciar sesión">login</mat-icon></a>
-                }
-                @else {
-                <button class="btn" (click)="this.loginService.logout()">
-                    <mat-icon matTooltip="Cerrar sesión">logout</mat-icon>
-                </button>
-                }
-                <!-- @else {
-                <mat-icon matTooltip="Cerrar sesión">logout</mat-icon>
-                } -->
-            </div>
-        </div>
-        <div class="menu">
-            <span>Listado</span>
-            <span (click)="openDialog()">Skills</span>
-            <span>Contacto</span>
-        </div>
-    </header>
+    <app-header></app-header>
     <main>
         
        
@@ -87,24 +62,5 @@
             <button mat-button>¡Descubre tu próxima lectura!</button>
         </section>
     </main>
-    <footer>
-        <div class="info">
-            <div class="item">
-                <span class="info-title">Dirección</span>
-                <span class="texto">Calle de los Laureles 123, Colonia Centro, Ciudad del Sol, Estado de la Esperanza,
-                    CP 45678, México.</span>
-            </div>
-            <div class="separator"></div>
-            <div class="item">
-                <span class="info-title">Contacto</span>
-                <div class="icon-contact">
-                    <mat-icon matTooltip="Télefono">call</mat-icon>
-                    <mat-icon matTooltip="Email">mail</mat-icon>
-                </div>
-            </div>
-        </div>
-        <div class="copy">
-            <span>© Rincón del libro 2024. Todos los derechos reservados.</span>
-        </div>
-    </footer>
+    <app-footer></app-footer>
 </div>
