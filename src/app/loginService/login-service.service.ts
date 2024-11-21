@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { afterNextRender, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface userData {
@@ -17,9 +17,11 @@ export class LoginServiceService {
   userInfo: userData | null = null;
 
   constructor(private router: Router) {
-    this.isAuthenticated = this.checkAuthenticated();
-
-    if (this.isAuthenticated) router.navigate(["/home"])
+    afterNextRender(() => {
+      this.isAuthenticated = this.checkAuthenticated();
+  
+      if (this.isAuthenticated) router.navigate(["/home"])
+    })
   }
 
   register(email: string, password: string, nombre: string): string {
