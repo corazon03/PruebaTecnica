@@ -2,12 +2,13 @@
     <div class="container">
         <mat-card>
             <mat-tab-group animationDuration="2000ms" fitInkBarToContent>
-                <mat-tab label="Iniciar sesión" >
+                <mat-tab label="Iniciar sesión">
                     <div class="tab-content">
                         <h4>Acceder</h4>
+                        <mat-hint style="color: white;">{{mensajeLogin}}</mat-hint>
                         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                             <mat-form-field appearance="fill">
-                                <mat-label>Email</mat-label>
+                                <mat-label>Correo</mat-label>
                                 <input matInput formControlName="email" placeholder="Email" required>
                                 <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
                                     Email inválido.
@@ -29,6 +30,7 @@
                 <mat-tab label="Registrarse">
                     <div class="tab-content">
                         <h4>Registro</h4>
+                        <mat-hint style="color: white;">{{mensajeRegistro}}</mat-hint>
                         <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
                             <mat-form-field appearance="fill">
                                 <mat-label>Nombre</mat-label>
@@ -47,7 +49,7 @@
                                 </mat-error>
                             </mat-form-field>
                             <mat-form-field appearance="fill">
-                                <mat-label>Password</mat-label>
+                                <mat-label>Contraseña</mat-label>
                                 <input matInput type="password" formControlName="password" placeholder="Password"
                                     required>
                                 <mat-error
