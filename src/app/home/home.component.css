@@ -13,12 +13,6 @@
     
 }
 
-button {
-    background-color: transparent;
-    border-color: transparent;
-
-}
-
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
@@ -56,6 +50,17 @@ h4 {
     border-radius: 50%;
     color: white;
     padding: 2px;
+}
+
+.btn {
+    background-color: transparent;
+    color: black;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
 }
 
 .menu {
@@ -277,7 +282,7 @@ button {
     height: 35px;
     border-radius: 15px;
     border-color: transparent;
-    color: white;
+    color: white !important;
     font-size: medium;
     font-weight: 500;
     cursor: pointer;
@@ -288,7 +293,7 @@ button:hover {
     height: 35px;
     border-radius: 15px;
     border: 2px solid #000080;
-    color: #000080;
+    color: #000080 !important;
     font-size: medium;
     font-weight: 500;
     cursor: pointer;

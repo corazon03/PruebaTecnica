@@ -40,13 +40,6 @@ export class HomeComponent {
   openDialog() {
     const dialogRef = this.dialog.open(SkillsComponent, {restoreFocus: false});
   }
-
   
-  skill: boolean = false;
-
-  openModalskill(): void {this.skill = true;}
-  
-  closeModalskill(): void { this.skill = false; }
-
   constructor(public loginService: LoginServiceService){}
 }

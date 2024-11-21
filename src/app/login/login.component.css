@@ -5,6 +5,7 @@
   align-items: center;
   height: 100vh;
   background-color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
 }
 
 mat-card {
@@ -26,15 +27,30 @@ button {
 }
 
 h4 {
-    color: white
+    color: #000080;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    font-weight: 500;
 }
 
 button {
-    background-color: white;
+    background-color: #000080;
     height: 35px;
     border-radius: 15px;
-    color: #000080;
+    border-color: transparent;
+    color: white;
     font-size: medium;
     font-weight: 500;
     cursor: pointer;
+}
+
+button:hover {
+  background-color: transparent;
+  height: 35px;
+  border-radius: 15px;
+  border-color: #000080;
+  color: #000080;
+  font-size: medium;
+  font-weight: 500;
+  cursor: pointer;
 }
