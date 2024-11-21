@@ -3,12 +3,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { register } from 'swiper/element/bundle';
 register();
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'
+
 import { LoginServiceService } from '../loginService/login-service.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIconModule, CommonModule],
+  imports: [MatIconModule, CommonModule, RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

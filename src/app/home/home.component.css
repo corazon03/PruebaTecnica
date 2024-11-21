@@ -11,6 +11,11 @@
     
 } */
 
+button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
 h1 {
     font-size: 2rem;
     font-weight: 700;

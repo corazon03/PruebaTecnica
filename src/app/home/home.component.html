@@ -6,10 +6,12 @@
                 <mat-icon>home</mat-icon>
 
                 @if (!loginService.isAuthenticated) {
-                <a routerLink="[/login]"><mat-icon>login</mat-icon></a>
+                <a [routerLink]="['/login']"><mat-icon>login</mat-icon></a>
                 }
                 @else {
-                <mat-icon>logout</mat-icon>
+                <button (click)="this.loginService.logout()">
+                    <mat-icon>logout</mat-icon>
+                </button>
                 }
             </div>
         </div>
