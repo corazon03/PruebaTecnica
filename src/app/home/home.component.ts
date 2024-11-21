@@ -4,11 +4,12 @@ import { register } from 'swiper/element/bundle';
 register();
 import { CommonModule } from '@angular/common';
 import { LoginServiceService } from '../loginService/login-service.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIconModule, CommonModule],
+  imports: [MatIconModule, CommonModule, MatTooltipModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

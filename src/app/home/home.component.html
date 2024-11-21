@@ -3,13 +3,13 @@
         <div class="logo">
             <h1>Rincón del libro</h1>
             <div class="sesion">
-                <mat-icon>home</mat-icon>
+                <mat-icon matTooltip="Home">home</mat-icon>
 
                 @if (!loginService.isAuthenticated) {
-                <a routerLink="[/login]"><mat-icon>login</mat-icon></a>
+                <a routerLink="[/login]"><mat-icon matTooltip="Iniciar sesión">login</mat-icon></a>
                 }
                 @else {
-                <mat-icon>logout</mat-icon>
+                <mat-icon matTooltip="Cerrar sesión">logout</mat-icon>
                 }
             </div>
         </div>
@@ -23,7 +23,7 @@
         @if(loginService.userInfo !== null){
         <section class="saludo">
             <div class="sal">
-                <span>¡Bienvenido! {{loginService.userInfo.nombre}}</span>
+                <h4>¡Bienvenido(a), {{loginService.userInfo.nombre}}!</h4>
                 <p>Descubre libros, historias y mundos que te inspirarán. Comparte tu pasión por la lectura y encuentra
                     tu próxima aventura entre páginas. ¡Explora y disfruta!</p>
             </div>
@@ -49,37 +49,53 @@
                 </swiper-slide>
             </swiper-container>
         </section>
-        <span>Género</span>
-        <div class="card-container">
-            <div class="card" *ngFor="let item of items">
-                <img [src]="item.image" (click)="openModal(item.image)">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
+        <section class="genero">
+            <h4>Géneros literarios</h4>
+            <div class="card-container">
+                <div class="card" *ngFor="let item of items">
+                    <img [src]="item.image" (click)="openModal(item.image)">
+                    <h5>{{ item.title }}</h5>
+                    <p>{{ item.description }}</p>
+                </div>
             </div>
-        </div>
-        <div class="modal" *ngIf="selectedImage" (click)="closeModal()">
-            <span class="close" (click)="closeModal()">&times;</span>
-            <img class="modal-content" [src]="selectedImage">
-        </div>
-        <div class="about">
-            <span>Acerca de nosotros</span>
-            <p>Hola</p>
-        </div>
-        <div class="btn-listado">
-            <span>Botón listado</span>
-        </div>
+            <div class="modal" *ngIf="selectedImage" (click)="closeModal()">
+                <span class="close" (click)="closeModal()">&times;</span>
+                <img class="modal-content" [src]="selectedImage">
+            </div>
+        </section>
+        <section class="about">
+            <h4>Acerca de nosotros</h4>
+            <p>En <span>Rincón del libro</span>, creemos en el poder transformador de las palabras. Somos un espacio
+                dedicado a los amantes de los libros, donde cada página cuenta una historia y cada título es una puerta
+                a nuevas aventuras.</p>
+            <p>Nuestro propósito es acercar a las personas al fascinante mundo de la lectura, ofreciendo una cuidada
+                selección de libros de diversos géneros, desde clásicos inmortales hasta las últimas novedades. Ya sea
+                que busques inspiración, conocimiento o simplemente una buena compañía, aquí encontrarás el libro
+                perfecto para ti.</p>
+            <p>Únete a nosotros y deja que los libros te lleven a lugares inimaginables. ¡Descubre, imagina y crece con
+                cada página!</p>
+        </section>
+        <section class="btn-listado">
+            <button mat-button>¡Descubre tu próxima lectura!</button>
+        </section>
     </main>
     <footer>
-        <div>
-            <div>
-                <span>Dirección</span>
+        <div class="info">
+            <div class="item">
+                <span class="info-title">Dirección</span>
+                <span class="texto">Calle de los Laureles 123, Colonia Centro, Ciudad del Sol, Estado de la Esperanza, CP 45678, México.</span>
             </div>
-            <div>
-                <span>Contacto</span>
+            <div class="separator"></div> <!-- Separador vertical -->
+            <div class="item">
+                <span class="info-title">Contacto</span>
+                <div class="icon-contact">
+                    <mat-icon matTooltip="Télefono">call</mat-icon>
+                    <mat-icon matTooltip="Email">mail</mat-icon>
+                </div>
             </div>
         </div>
-        <div>
-            <span>Derechos reservados</span>
+        <div class="copy">
+            <span>© Rincón del libro 2024. Todos los derechos reservados.</span>
         </div>
     </footer>
 </div>

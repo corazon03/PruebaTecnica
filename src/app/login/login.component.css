@@ -25,6 +25,16 @@ button {
   width: 100%;
 }
 
-h2 {
+h4 {
     color: white
+}
+
+button {
+    background-color: white;
+    height: 35px;
+    border-radius: 15px;
+    color: #000080;
+    font-size: medium;
+    font-weight: 500;
+    cursor: pointer;
 }

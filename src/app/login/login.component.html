@@ -1,20 +1,20 @@
 <section>
     <div class="container">
         <mat-card>
-            <mat-tab-group>
-                <mat-tab label="Iniciar sesión">
+            <mat-tab-group animationDuration="2000ms" fitInkBarToContent>
+                <mat-tab label="Iniciar sesión" >
                     <div class="tab-content">
-                        <h2>Acceder</h2>
+                        <h4>Acceder</h4>
                         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                             <mat-form-field appearance="fill">
                                 <mat-label>Email</mat-label>
                                 <input matInput formControlName="email" placeholder="Email" required>
                                 <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-                                    Correo electrónico inválido.
+                                    Email inválido.
                                 </mat-error>
                             </mat-form-field>
                             <mat-form-field appearance="fill">
-                                <mat-label>Password</mat-label>
+                                <mat-label>Contraseña</mat-label>
                                 <input matInput type="password" formControlName="password" placeholder="Password"
                                     required>
                                 <mat-error
@@ -22,13 +22,13 @@
                                     Contraseña inválida.
                                 </mat-error>
                             </mat-form-field>
-                            <button mat-raised-button color="primary" type="submit">Login</button>
+                            <button mat-raised-button color="primary" type="submit">Iniciar sesión</button>
                         </form>
                     </div>
                 </mat-tab>
                 <mat-tab label="Registrarse">
                     <div class="tab-content">
-                        <h2>Registro</h2>
+                        <h4>Registro</h4>
                         <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
                             <mat-form-field appearance="fill">
                                 <mat-label>Nombre</mat-label>
