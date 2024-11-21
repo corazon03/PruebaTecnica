@@ -1,6 +1,6 @@
 <main style="margin: auto; max-width: 80%;">
     <div *ngIf="listadoService.paginatedLibros.length > 0" class="grid-container">
-        <div *ngFor="let libro of listadoService.paginatedLibros" class="grid-item">
+        <div *ngFor="let libro of listadoService.paginatedLibros" class="grid-item" (click)="getDetails(libro.id)">
             <mat-card class="example-card" appearance="outlined">
                 <mat-card-header>
                     <mat-card-title>{{ libro.title }}</mat-card-title>
