@@ -1,0 +1,15 @@
+.book-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 300px;
+}
+
+p, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    text-align: center;
+    padding: 4px;
+}
