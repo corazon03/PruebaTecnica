@@ -15,11 +15,13 @@
         </div>
         <div class="menu">
             <span>Listado</span>
-            <span>Skills</span>
+            <span (click)="openDialog()">Skills</span>
             <span>Contacto</span>
         </div>
     </header>
     <main>
+        
+       
         @if(loginService.userInfo !== null){
         <section class="saludo">
             <div class="sal">
@@ -85,7 +87,7 @@
                 <span class="info-title">Dirección</span>
                 <span class="texto">Calle de los Laureles 123, Colonia Centro, Ciudad del Sol, Estado de la Esperanza, CP 45678, México.</span>
             </div>
-            <div class="separator"></div> <!-- Separador vertical -->
+            <div class="separator"></div>
             <div class="item">
                 <span class="info-title">Contacto</span>
                 <div class="icon-contact">

@@ -210,6 +210,11 @@ main {
 .modal-content {
     max-width: 90%;
     max-height: 90%;
+    min-width: 80vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .close {
@@ -287,6 +292,7 @@ footer {
     height: 150px;
     align-content: center;
     padding-inline: 1rem;
+    padding-block: 1.5rem;
     background-color: #01013e;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -294,7 +300,6 @@ footer {
 
 .info {
     display: flex;
-    /* Usar flexbox para un mejor control del espaciado */
     align-items: center;
     margin-bottom: 2rem;
 }
@@ -321,13 +326,9 @@ footer {
 
 .separator {
     width: 1px;
-    /* Ancho del separador vertical */
     height: 50px;
-    /* Asegurar que ocupe una buena parte del contenedor */
     background-color: white;
-    /* Color del separador */
     margin: 0 5px;
-    /* Reducir el margen para disminuir el espacio entre items */
 }
 
 .texto {

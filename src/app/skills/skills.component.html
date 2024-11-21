@@ -1,1 +1,11 @@
-<p>skills works!</p>
+
+  <mat-dialog-content>
+    <div class="button-container">
+        <button (click)="moveButton()" [ngStyle]="{'top.px': top, 'left.px': left}">
+          ¡Click aquí!
+        </button>
+      </div>  
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Okay</button>
+  </mat-dialog-actions>

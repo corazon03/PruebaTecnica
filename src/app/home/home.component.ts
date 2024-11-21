@@ -5,11 +5,19 @@ register();
 import { CommonModule } from '@angular/common';
 import { LoginServiceService } from '../loginService/login-service.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { SkillsComponent } from '../skills/skills.component';
+import {MatButtonModule} from '@angular/material/button';
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIconModule, CommonModule, MatTooltipModule],
+  imports: [MatIconModule, CommonModule, MatTooltipModule, SkillsComponent, MatButtonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -20,10 +28,23 @@ export class HomeComponent {
             { title: 'Thriller', description: 'El thriller es un género literario que se caracteriza por mantener al lector en un estado de suspenso, intriga y emoción constante. Estas historias suelen tener un ritmo rápido, giros inesperados y situaciones llenas de tensión que buscan atrapar la atención del lector desde el principio hasta el final.', image: '/Thriller.jpg' } ];
           
   selectedImage: string | null = null;
-
-  constructor(public loginService: LoginServiceService){}
   
   openModal(image: string): void { this.selectedImage = image; }
   
   closeModal(): void { this.selectedImage = null; }
+
+  readonly dialog = inject(MatDialog);
+
+  openDialog() {
+    const dialogRef = this.dialog.open(SkillsComponent, {restoreFocus: false});
+  }
+
+  
+  skill: boolean = false;
+
+  openModalskill(): void {this.skill = true;}
+  
+  closeModalskill(): void { this.skill = false; }
+
+  constructor(public loginService: LoginServiceService){}
 }
