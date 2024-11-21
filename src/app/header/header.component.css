@@ -68,3 +68,8 @@ h1 {
     padding-inline: 10px;
     cursor: pointer;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}

@@ -2,7 +2,7 @@
     <div class="logo">
         <h1>Rincón del libro</h1>
         <div class="sesion">
-            <mat-icon matTooltip="Home">home</mat-icon>
+            <a [routerLink]="['/home']"><mat-icon matTooltip="Home">home</mat-icon></a>
 
             @if (!loginService.isAuthenticated) {
             <a style="text-decoration: none; color: black;" [routerLink]="['/login']"><mat-icon
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="menu">
-        <span>Listado</span>
+        <a [routerLink]="['/libros']"><span>Listado</span></a>
         <span (click)="openDialog()">Skills</span>
         <span>Contacto</span>
     </div>
