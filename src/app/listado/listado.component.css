@@ -1,0 +1,22 @@
+.example-card {
+  max-width: 400px;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  margin: 0 10px;
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain; /* Mantiene la escala sin recortar */
+  background-color: #f0f0f0; /* Opcional: añade un fondo para las imágenes más pequeñas */
+}
+

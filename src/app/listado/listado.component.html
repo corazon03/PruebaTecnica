@@ -1,1 +1,24 @@
-<p>listado works!</p>
+<div *ngIf="listadoService.paginatedLibros.length > 0">
+    <mat-grid-list cols="3" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let libro of listadoService.paginatedLibros">
+            <mat-card class="example-card" appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>{{ libro.title }}</mat-card-title>
+                    <mat-card-subtitle>{{ libro.authors }}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="libro.image" [alt]="libro.title" class="book-image">
+                <mat-card-content>
+                    <p>{{ libro.subtitle }}</p>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <div class="pagination-controls">
+        <button mat-raised-button color="primary" (click)="onPrevPage()"
+            [disabled]="listadoService.page === 1">Anterior</button>
+        <span>Página {{ listadoService.page }}</span>
+        <button mat-raised-button color="primary" (click)="onNextPage()"
+            [disabled]="listadoService.page * listadoService.ITEMS_PER_PAGE >= listadoService.total">Siguiente</button>
+    </div>
+</div>
