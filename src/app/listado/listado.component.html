@@ -1,6 +1,6 @@
-<div *ngIf="listadoService.paginatedLibros.length > 0">
-    <mat-grid-list cols="3" rowHeight="1:1">
-        <mat-grid-tile *ngFor="let libro of listadoService.paginatedLibros">
+<main style="margin: auto; max-width: 80%;">
+    <div *ngIf="listadoService.paginatedLibros.length > 0" class="grid-container">
+        <div *ngFor="let libro of listadoService.paginatedLibros" class="grid-item">
             <mat-card class="example-card" appearance="outlined">
                 <mat-card-header>
                     <mat-card-title>{{ libro.title }}</mat-card-title>
@@ -11,8 +11,8 @@
                     <p>{{ libro.subtitle }}</p>
                 </mat-card-content>
             </mat-card>
-        </mat-grid-tile>
-    </mat-grid-list>
+        </div>
+    </div>
 
     <div class="pagination-controls">
         <button mat-raised-button color="primary" (click)="onPrevPage()"
@@ -21,4 +21,4 @@
         <button mat-raised-button color="primary" (click)="onNextPage()"
             [disabled]="listadoService.page * listadoService.ITEMS_PER_PAGE >= listadoService.total">Siguiente</button>
     </div>
-</div>
+</main>
