@@ -1,11 +1,11 @@
 <section>
     <div class="container">
         <mat-card>
-            <mat-tab-group  animationDuration="2000ms" fitInkBarToContent>
+            <mat-tab-group animationDuration="2000ms" fitInkBarToContent>
                 <mat-tab label="Iniciar sesión">
                     <div class="tab-content">
                         <h4>Acceder</h4>
-                        <mat-hint style="color: white;">{{mensajeLogin}}</mat-hint>
+                        <mat-hint>{{mensajeLogin}}</mat-hint>
                         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                             <mat-form-field appearance="fill">
                                 <mat-label>Correo</mat-label>
@@ -30,7 +30,7 @@
                 <mat-tab label="Registrarse">
                     <div class="tab-content">
                         <h4>Registro</h4>
-                        <mat-hint style="color: white;">{{mensajeRegistro}}</mat-hint>
+                        <mat-hint>{{mensajeRegistro}}</mat-hint>
                         <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
                             <mat-form-field appearance="fill">
                                 <mat-label>Nombre</mat-label>
