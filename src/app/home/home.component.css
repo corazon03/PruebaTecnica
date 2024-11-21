@@ -1,6 +1,8 @@
-/* header {
-    padding-block: 1rem;
-    padding-inline: 2rem;
+ header {
+    /* padding-block: 1rem;
+    padding-inline: 2rem; */
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 768px) {
@@ -14,20 +16,31 @@
 button {
     background-color: transparent;
     border-color: transparent;
+
 }
 
 h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #333;
+    color: #000080;
     margin: 0;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: x-large;
+    color: #000080;
+    margin: 0;
+    border-bottom: 2px solid #000080;
+    display: inline-block;
 }
 
 .logo {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    background-color: aquamarine;
 }
 
 .sesion {
@@ -35,7 +48,14 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: blue;
+}
+
+.sesion mat-icon:hover {
+    cursor: pointer;
+    background-color: #000080;
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
 }
 
 .menu {
@@ -46,6 +66,14 @@ h1 {
     justify-items: center;
 }
 
+.menu span:hover {
+    background-color: #000080;
+    border-radius: 20px;
+    color: white;
+    padding-inline: 10px;
+    cursor: pointer;
+}
+
 main {
     display: block;
     justify-content: center;
@@ -54,11 +82,17 @@ main {
     padding-block: 1rem;
     box-sizing: inherit;
     position: relative;
-  }
+    font-family: 'Montserrat', sans-serif;
+}
 
 .saludo {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.saludo h4 {
+    margin-bottom: 1rem;
 }
 
 .sal {
@@ -81,7 +115,7 @@ main {
 .image-container {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 .slider {
@@ -146,26 +180,27 @@ main {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 2rem;
-  }
-  
-  .card {
+    margin-top: 0.5rem;
+}
+
+.card {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    width: 200px;
-  }
-  
-  .card img {
+    width: 300px;
+}
+
+.card img {
     width: 100%;
     height: auto;
     border-radius: 5px 5px 0 0;
-  }
-  
-  .modal {
+    margin-bottom: 0.5rem;
+}
+
+.modal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,16 +209,16 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     max-width: 90%;
     max-height: 90%;
-  }
-  
-  .close {
+}
+
+.close {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -191,11 +226,124 @@ main {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-  }  
+}
+
+.genero {
+    margin-top: 1rem;
+}
+
+.genero h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: large;
+    color: #000080;
+}
+
+.about {
+    margin-top: 1rem;
+    padding: 10px;
+    text-align: start;
+    border: 2px solid #000080;
+    border-radius: 20px;
+    justify-items: center;
+}
+
+.about p {
+    margin-top: 0.5rem;
+}
+
+.about p:last-child {
+    font-weight: 600;
+}
+
+.about span {
+    font-weight: 600;
+}
+
+.btn-listado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+button {
+    background-color: #000080;
+    height: 35px;
+    border-radius: 15px;
+    border-color: transparent;
+    color: white;
+    font-size: medium;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    height: 35px;
+    border-radius: 15px;
+    border: 2px solid #000080;
+    color: #000080;
+    font-size: medium;
+    font-weight: 500;
+    cursor: pointer;
+}
 
 footer {
-    height: 150px; 
+    height: 150px;
     align-content: center;
     padding-inline: 1rem;
-    background-color: aquamarine;
+    background-color: #01013e;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info {
+    display: flex;
+    /* Usar flexbox para un mejor control del espaciado */
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.info-title {
+    font-weight: 700;
+}
+
+.info .item {
+    flex: 1;
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-contact mat-icon {
+    padding-inline: 10px;
+    cursor: pointer;
+}
+
+.separator {
+    width: 1px;
+    /* Ancho del separador vertical */
+    height: 50px;
+    /* Asegurar que ocupe una buena parte del contenedor */
+    background-color: white;
+    /* Color del separador */
+    margin: 0 5px;
+    /* Reducir el margen para disminuir el espacio entre items */
+}
+
+.texto {
+    font-size: small;
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-size: small;
 }

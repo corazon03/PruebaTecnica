@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'
 
 import { LoginServiceService } from '../loginService/login-service.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIconModule, CommonModule, RouterModule],
+  imports: [MatIconModule, CommonModule, RouterModule, MatTooltipModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
