@@ -7,6 +7,8 @@ import { MatButton } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { DetalleLibroComponent } from '../detalle-libro/detalle-libro.component';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 export interface DetailsResponse {
   status: string
@@ -27,7 +29,7 @@ export interface DetailsResponse {
 @Component({
   selector: 'app-listado',
   standalone: true,
-  imports: [NgIf, NgFor, MatCard, MatCardContent,MatCardHeader,MatCardContent, MatCardTitle, MatCardSubtitle, MatGridListModule, MatButton],
+  imports: [NgIf, NgFor, MatCard, MatCardContent,MatCardHeader,MatCardContent, MatCardTitle, MatCardSubtitle, MatGridListModule, MatButton, FooterComponent, HeaderComponent],
   templateUrl: './listado.component.html',
   styleUrl: './listado.component.css'
 })
